@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+          <ul>
+              <li v-for="item of arrayLista" >
+                    {{item}}    
+
+              </li> 
+
+          </ul>
+         <input type="text" v-model="elementoLista" @keyup.enter="addDatosLista" >
+    </div>  
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script type="text/javascript">
+          new Vue({
+              el:"#main" ,
+              data:{
+                 arrayLista:['item1','item2','item3','item4'] ,
+                 elementoLista:'' 
+
+              },
+               
+               methods: {
+                   addDatosLista:function(){
+                         this.arrayLista.push(this.elementoLista) ;
+                         this.elementoLista='';  
+
+                   }
+               }, 
+
+
+          });
+    </script>
+
+</body>
+</html>
+
